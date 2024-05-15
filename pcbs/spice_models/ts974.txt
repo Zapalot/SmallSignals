@@ -1,0 +1,28 @@
+* A dual opamp ngspice model
+* file name: TL072-dual.lib
+* 1 1out
+* 2 1in-
+* 3 1in+
+* 4 vcc (v+)
+* 5 2in+
+* 6 2in-
+* 7 2out
+* 8 3out
+* 9 1in-
+* 10 1in+
+* 11 vdd (V-)
+* 12 4in+
+* 13 4in-
+* 14 4out
+
+
+*1out 1in- 1in+ v+ 2in+ 2in- 2out 3out 3in- 3in+ v- 4in+ 4in- 4out
+
+.subckt TS974_quad 1out 1in- 1in+ v+ 2in+ 2in- 2out 3out 3in- 3in+ v- 4in+ 4in- 4out
+.include ts97x_series.txt
+XU1A 1in- 1in+ 1out v+ v- TS97x
+XU1B 2in- 2in+ 2out v+ v- TS97x
+XU1C 3in- 3in+ 3out v+ v- TS97x
+XU1D 4in- 4in+ 4out v+ v- TS97x
+.ends
+

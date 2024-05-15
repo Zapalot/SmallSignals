@@ -1,0 +1,222 @@
+(ExpressProject "LMC6001A_Test_Circuit"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 S024 (3998392)  [12/6/2021]-[07/21/22]")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File ".\lmc6001a.olb"
+        (Type "Schematic Library")))
+    (NoModify)
+    (File "lmc6001a_test_circuit.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "61215")
+    (Display_Online_DRC_Results "FALSE")
+    (DRC_Scope "0")
+    (DRC_Action "0")
+    (DRC_Create_Warnings "TRUE")
+    (DRC_View_Output "TRUE")
+    (DRC_View_Output_Type "2")
+    (DRC_Preserved_Waived "FALSE")
+    (RUN_Online_Rules "FALSE")
+    (DRC_Run_Electrical_Rules "TRUE")
+    (DRC_Check_Single_Node_Nets "TRUE")
+    (DRC_Check_No_Driving_Source "TRUE")
+    (DRC_Check_Duplicate_NetNames "TRUE")
+    (DRC_Check_Off-Page_Connectors "FALSE")
+    (DRC_Check_Ports "FALSE")
+    (DRC_Check_Unconnected_Nets "TRUE")
+    (DRC_Check_Floating_Pins "TRUE")
+    (DRC_SDT_Compatibility "FALSE")
+    (DRC_Check_Single_Node_Nets_Online "FALSE")
+    (DRC_Check_No_Driving_Source_Online "FALSE")
+    (DRC_Check_Duplicate_NetNames_Online "FALSE")
+    (DRC_Check_Off-Page_Connectors_Online "FALSE")
+    (DRC_Check_Ports_Online "FALSE")
+    (DRC_Check_Unconnected_Nets_Online "FALSE")
+    (DRC_Check_Floating_Pins_Online "FALSE")
+    (DRC_Run_Electrical_Reports "TRUE")
+    (DRC_Report_Netnames "FALSE")
+    (DRC_Report_Off-grid_Objects "FALSE")
+    (DRC_Report_Ports_and_Off-page_Connectors "FALSE")
+    (DRC_Check_for_Misleading_TAP "FALSE")
+    (DRC_Run_Physical_Rules "TRUE")
+    (DRC_Check_Physical_Power_Pins_Visibility "TRUE")
+    (DRC_Check_PCB_Footprint_Property "TRUE")
+    (DRC_Check_Normal_Convert_View_Sync "TRUE")
+    (DRC_Check_Incorrect_PinGroup_Assignment "TRUE")
+    (DRC_Check_High_Speed_Props_Syntax "TRUE")
+    (DRC_Check_Missing_Pin_Numbers "TRUE")
+    (DRC_Check_Device_With_No_Pins "TRUE")
+    (DRC_Check_Power_Ground_Short "TRUE")
+    (DRC_Check_Name_Prop_For_HierBlocks "TRUE")
+    (DRC_Check_Physical_Power_Pins_Visibility_Online "FALSE")
+    (DRC_Check_PCB_Footprint_Property_Online "FALSE")
+    (DRC_Check_Normal_Convert_View_Sync_Online "FALSE")
+    (DRC_Check_Incorrect_PinGroup_Assignment_Online "FALSE")
+    (DRC_Check_Missing_Pin_Numbers_Online "FALSE")
+    (DRC_Check_Device_With_No_Pins_Online "FALSE")
+    (DRC_Check_Power_Ground_Short_Online "FALSE")
+    (DRC_Check_Name_Prop_For_HierBlocks_Online "FALSE")
+    (DRC_Run_Physical_Reports "TRUE")
+    (DRC_Visible_Power_pins "FALSE")
+    (DRC_Report_Unused_Part_Packages "TRUE")
+    (DRC_Type_Mismatch "TRUE")
+    (DRC_Identical_References "TRUE")
+    (DRC_Run_Simulation_Rules "TRUE")
+    (DRC_Check_Pspice_Model_Lib_Path_Online "TRUE")
+    (DRC_Run_Custom_Rules "FALSE")
+    (DRC_Report_File
+       "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBERS\NON-GWL_PSPICE_SYMBOL_UPDATE_2022\ACTIVE_WORK_SANKALP\LMC6001A\LM6001A_PSPICE\LMC6001A_TEST_CIRCUIT.DRC"))
+  (Folder "Layout")
+  (Folder "Outputs")
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (ActiveProfile ".\lmc6001a_test_circuit-pspicefiles\schematic\trans.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\lmc6001a_test_circuit-pspicefiles\schematic\trans.sim"
+        (DisplayName "SCHEMATIC-TRANS")
+        (Type "PSpice Profile")))
+    (Folder "Model Libraries"
+      (Sort User)
+      (File ".\lmc6001a.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\lmc6001a.lib")))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (LMC6001A
+      (FullPartName "LMC6001A.Convert")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBERS\NON-GWL_PSPICE_SYMBOL_UPDATE_2022\ACTIVE_WORK_SANKALP\LMC6001A\LM6001A_PSPICE\LMC6001A.OLB")
+      (DeviceIndex "0"))
+    (LMC6001B
+      (FullPartName "LMC6001B.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART NUMBERS\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\LMC6001\LMC6001B_TEST\PSPICE_TEST1\LMC6001B.OLB")
+      (DeviceIndex "0"))
+    (TLV2262
+      (FullPartName "TLV2262.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\TLV2262\TLV2262_TEST\PSPICE_TEST1\TLV2262.OLB")
+      (DeviceIndex "0"))
+    (TLV2254A_3V
+      (FullPartName "TLV2254A_3V.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\TLV2254A\TLV2254A_3V\TLV2254A_3V_TEST\PSPICE_TEST1\TLV2254A_3V.OLB")
+      (DeviceIndex "0"))
+    (TLV2254_3V
+      (FullPartName "TLV2254_3V.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\TLV2254\TLV2254_3V\TLV2254_3V_TEST\PSPICE_TEST1\TLV2254_3V.OLB")
+      (DeviceIndex "0"))
+    (TLV2252_3V
+      (FullPartName "TLV2252_3V.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\TLV2252\TLV2252_3V\TLV2252_3V_TEST\PSPICE_TEST1\TLV2252_3V.OLB")
+      (DeviceIndex "0"))
+    (TLC2654A
+      (FullPartName "TLC2654A.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\TLC2654A\TLC2654_TEST\PSPICE_TEST1\TLC2654A.OLB")
+      (DeviceIndex "0"))
+    (TLC2654
+      (FullPartName "TLC2654.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\TLC2654\TLC2654_TEST\PSPICE_TEST1\TLC2654.OLB")
+      (DeviceIndex "0"))
+    (TLC2652
+      (FullPartName "TLC2652.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\TLC2652\TLC2652_TEST\PSPICE_TEST1\TLC2652.OLB")
+      (DeviceIndex "0"))
+    (TLC1078_10V
+      (FullPartName "TLC1078_10V.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\TLC1078\TLC1078_10V\TLC1078_10V_TEST\PSPICE_TEST1\TLC1078_10V.OLB")
+      (DeviceIndex "0"))
+    (TLC1078_5V
+      (FullPartName "TLC1078_5V.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\TLC1078\TLC1078_5V\TLC1078_5V_TEST\PSPICE_TEST1\TLC1078_5V.OLB")
+      (DeviceIndex "0"))
+    (TLC27M9_5V
+      (FullPartName "TLC27M9_5V.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\TLC27M9\TLC27M9\TLC27M9_5V\TLC27M9_5V_TEST\PSPICE_TEST1\TLC27M9_5V.OLB")
+      (DeviceIndex "0"))
+    (TLC27M7_5V
+      (FullPartName "TLC27M7_5V.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\TLC27M7\TLC27M7_5V\TLC27M7_5V_TEST\PSPICE_TEST1\TLC27M7_5V.OLB")
+      (DeviceIndex "0"))
+    (TLC27L9_5V
+      (FullPartName "TLC27L9_5V.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\TLC27L9\TLC27L9_5V\TLC27L9_5V_TEST\PSPICE_TEST1\TLC27L9_5V.OLB")
+      (DeviceIndex "0"))
+    (TLC27L7_5V
+      (FullPartName "TLC27L7_5V.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\TLC27L7\TLC27L7_5V\TLC27L7_5V_TEST\PSPICE_TEST1\TLC27L7_5V.OLB")
+      (DeviceIndex "0"))
+    (TLC279_5V
+      (FullPartName "TLC279_5V.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\TLC279\TLC279_5V\TLC279_5V_TEST\PSPICE_TEST1\TLC279_5V.OLB")
+      (DeviceIndex "0"))
+    (TLC277_5V
+      (FullPartName "TLC277_5V.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\TLC277\TLC277_5V\TLC277_5V_TEST\PSPICE_TEST1\TLC277_5V.OLB")
+      (DeviceIndex "0"))
+    (LMP7707
+      (FullPartName "LMP7707.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\1.PRECISION OPAMPS\LMP7707\LMP7707_TEST\PSPICE_TEST2\LMP7707.OLB")
+      (DeviceIndex "0"))
+    (OP07C
+      (FullPartName "OP07C.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\OP07C\OP07C_TEST\PSPICE\OP07C.OLB")
+      (DeviceIndex "0"))
+    (TLV6003_15V
+      (FullPartName "TLV6003_15V.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\TLV6003\TLV6003_15\TLV6003_15V_QC\RELEASE SANKALP\TLV6003_15V_PSPICE_AIO\TLV6003_15V.OLB")
+      (DeviceIndex "0"))
+    (TLV6003_5V
+      (FullPartName "TLV6003_5V.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\TLV6003\TLV6003_5\TLV6003_5V_QC\TLV6003_15V_PSPICE_AIO\TLV6003_5V.OLB")
+      (DeviceIndex "0"))
+    (TLV6003_2P7V
+      (FullPartName "TLV6003_2P7V.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\CADENCE_SYMBOL_LIST\TLV6003\TLV6003_2.7\TLV6003_2P7V_TEST\PSPICE\TLV6003_2P7V.OLB")
+      (DeviceIndex "0"))
+    (LMP201x
+      (FullPartName "LMP201x.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBER\LMP201X\LMP201X_TEST\PSICE\LMP201X.OLB")
+      (DeviceIndex "0")))
+  (MPSSessionName "x1093544")
+  (LastUsedLibraryBrowseDirectory
+     "C:\ELABTRANS_WS\ELABTRANS_DS\Part numbers\CADENCE_symbol_list\1.Precision Opamps\LMC6001\LMC6001A\LMC6001A_TEST\PSPICE_TEST1")
+  (Folder "Logs")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Outputs"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 1231 0 810"))
+      (Tab 0))))

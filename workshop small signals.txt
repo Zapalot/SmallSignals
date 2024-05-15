@@ -1,0 +1,42 @@
+	- Strom und Spannung
+		- Spannung immer in Relation zu etwas!
+	- Messen
+		- Audio Eingang
+			-> differenziell?
+			- eigentlich immer ein Hochpass!
+		- Arduino "analogRead"
+		- Arduino + ADC
+		---> in den meisten Fällen reicht das schon!
+	- Ein bisschen Elektronik
+		- Spannungsteiler
+		- R=U/I
+	- Einfache Schaltungen für Eingangssignale
+		-		https://www.electronics-tutorials.ws/filter/filter_2.html
+		- RC Tiefpass
+		- RC Hochpass
+		- Input protection
+	- Signalverarbeitung
+		- Tiefpass in Software
+			https://github.com/EmotiBit/EmotiBit_ArduinoFilters
+		- Notch Filter
+		- Aliasing
+			- Erklärung mit Bild
+
+	- Wann Verstärken
+		- Spannung des Signals ist zu klein
+		- "Impedanz" der Quelle ist zu hoch
+		- ich will einen Strom messen anstelle einer Spannung
+	- Opamps
+		- Chip zeigen
+		- Datenblatt
+		- Inverting/noninverting inputs
+		- OUT=(inP - inM)*gain
+		---> feedback
+		--> non inverting amp
+		- transimpedance		
+Https://En.Wikipedia.Org/Wiki/Transimpedance_Amplifier
+https://www.electronics-tutorials.ws/opamp/opamp_1.html
+https://www.electronics-tutorials.ws/filter/filter_2.html
+https://e2e.ti.com/blogs_/archives/b/precisionhub/posts/transimpedance-amplifiers-what-op-amp-bandwidth-do-i-need-part-i
+https://www.analog.com/media/en/training-seminars/design-handbooks/basic-linear-design/chapter1.pdf
+
