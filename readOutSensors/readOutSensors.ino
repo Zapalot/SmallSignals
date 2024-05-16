@@ -40,7 +40,7 @@ void setup()
   // ads.setGain(GAIN_FOUR);       // 4x gain   +/- 1.024V  1 bit = 0.5mV    0.03125mV
   // ads.setGain(GAIN_EIGHT);      // 8x gain   +/- 0.512V  1 bit = 0.25mV   0.015625mV
   // ads.setGain(GAIN_SIXTEEN);    // 16x gain  +/- 0.256V  1 bit = 0.125mV  0.0078125mV
-
+// for Comparison: Arduino: 5V/1024 --> 1 bit ~ 5mV
 
   if (!ads.begin())
   {
@@ -49,7 +49,7 @@ void setup()
       ;
   }
   Wire.setClock(400000);
-  ads.setGain(GAIN_FOUR);
+  ads.setGain(GAIN_ONE);
     ads.setDataRate(RATE_ADS1115_860SPS);
   ads.startADCReading(ADS1X15_REG_CONFIG_MUX_DIFF_0_1, false); // start single conversion of Differential Voltages
 }

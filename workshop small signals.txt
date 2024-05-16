@@ -1,42 +1,69 @@
-	- Strom und Spannung
-		- Spannung immer in Relation zu etwas!
-	- Messen
-		- Audio Eingang
-			-> differenziell?
-			- eigentlich immer ein Hochpass!
-		- Arduino "analogRead"
-		- Arduino + ADC
-		---> in den meisten Fällen reicht das schon!
-	- Ein bisschen Elektronik
-		- Spannungsteiler
-		- R=U/I
-	- Einfache Schaltungen für Eingangssignale
-		-		https://www.electronics-tutorials.ws/filter/filter_2.html
-		- RC Tiefpass
-		- RC Hochpass
-		- Input protection
-	- Signalverarbeitung
-		- Tiefpass in Software
-			https://github.com/EmotiBit/EmotiBit_ArduinoFilters
-		- Notch Filter
-		- Aliasing
-			- Erklärung mit Bild
 
-	- Wann Verstärken
-		- Spannung des Signals ist zu klein
-		- "Impedanz" der Quelle ist zu hoch
-		- ich will einen Strom messen anstelle einer Spannung
-	- Opamps
-		- Chip zeigen
-		- Datenblatt
-		- Inverting/noninverting inputs
-		- OUT=(inP - inM)*gain
-		---> feedback
-		--> non inverting amp
-		- transimpedance		
-Https://En.Wikipedia.Org/Wiki/Transimpedance_Amplifier
+== Setting the Arduino Serial Plotter to display more values:
+The File  "Arduino IDE\Arduino IDE\resources\app\node_modules\arduino-serial-plotter-webapp\build\static\js\main.35ae02cb.chunk.js" can be modified to change the number of data points displayed, you need to replace U=Object(o.useState)(50) with U=Object(o.useState)(5000) it will increase maximum data points to 5000.
+
+https://github.com/arduino/arduino-ide/issues/803
+
+== Some basic electronics (Voltages, Currents Resistors)
+	= Measuring Currents and resistances with an Arduino
+		- Analog to Digital Converters (ADC) such as the one behind the analog Input Pins of the Arduino can only measure voltages
+		- We can use a Resistor to "convert" a current flow into a voltage that can be measured "shunt"
+	= Voltage Dividers
+		- We can measure changes in Resistance (that happen in materials due to temperature, light, humidity strain etc.) with a "voltage divider" formed of a known Resistor and the Resistor to be measured. https://en.wikipedia.org/wiki/Voltage_divider
+		- Voltage deviders are incredibly useful for a wide variety of applications - make sure you understand the basic concept!
+	= RC high/lowpass filters
+		- One of the resistors can be replaced by a capacitor to form a low- or high pass filter. These can be used to get rid of high frequency disturbances or DC Offsets
+			https://www.electronics-tutorials.ws/filter/filter_2.html
+	= Biasing
+		- when measuring an AC signal, the "rest/zero" point of the signal has to be moved to a voltage thal lies somewhere in the middle of what your ADC can measure (2.5V for an Arduino). This can be done by using a high pass with two resistors, one to ground and one to 5V.
+		- The general principle of "moving the Signal to swing around a known reference voltage" is called "biasing"
+	= Input protection
+		- Signals outside the allowable voltage range (0-5V for an Arduino Nano) can damage electronic components
+		- One way to clip the range of an input signal is using "clamping diodes"
+		- Arduino inputs have built in clamping diodes, but they can only take 1mA of current. To limit the flow of current, a resistor (such as 10kOhm) can be put in between the input pin and the signal source. To guard against higher input voltages, you still need external clamping diodes.
+	- 	https://community.openenergymonitor.org/t/analog-input-protection-when-arduino-is-off/13530/10
+
+== "Cleaning up disturbances
+=Cabling
+	Using shielded Cables (such as ethernet cables) and symmetric inputs when possible makes a HUGE difference.
+=RC low-pass
+ Using an RC low pass filter on the input can work wonders. Choose the R/C values so that the "cutoff frequency" lies somewhere between the speed of the reaction that you need, and the frequency of the noise.
+	-if you have a very low current /high impedance input, make sure to use a capacitor with low "leakage current" such as a film capacitor.  With high impedance inputs, the impedance of the input signal source might be dominating the setup, in this case, you need to use either an Opamp or just play around with multiple, small film/ceramic ceramic capacitors until you get the right balance of noise and responsiveness.
+
+= Software solutions
+	- Measuring multiple times and adding all values together is a valid, but not the most effective technique to get rid of high frequency noise. Don't use "int" for adding a lot of large values, it will overflow.
+	- If you know the frequency of the disturbance (such as 50Hz line humm) and the frequency of your measurements (which can change if you i.e. add Serial output), you can use a "notch" filter to specifically "kill" noise of that frequency. An implementation is available in the "EmotiBit ArduinoFilters" Library that also offers very handy High/Low pass "butterworth" filters that have a much better frequency/phase response than simple averaging. 
+
+
+== Using external ADCs
+	- there are many external ADCs with much better precision than the internal one of the Arduino. They often have additional features such as an internal amplifier that can be configures in software (PGA), higher resolution and differential/symmetric inputs. 
+	- they are usually connected by the two wire "I2C" bus, just like many other sensors. Running multiple identical ADCs on on I2C bus will usually need an "I2C Multiplexer".
+	- I brought two ADS1115, they measure up to 860 samples per second, have 16 bit resolution, and at their highest PGA setting, can measure voltage changes down to 0.01mv(!) -  That's already ~700x higher resolution for small signals than the internal ADC for just a handful of Euros!
+
+== OpAmps
+Opamps can be used for a huge range of applications.
 https://www.electronics-tutorials.ws/opamp/opamp_1.html
-https://www.electronics-tutorials.ws/filter/filter_2.html
-https://e2e.ti.com/blogs_/archives/b/precisionhub/posts/transimpedance-amplifiers-what-op-amp-bandwidth-do-i-need-part-i
-https://www.analog.com/media/en/training-seminars/design-handbooks/basic-linear-design/chapter1.pdf
+https://www.analog.com/media/en/training-seminars/design-handbooks/basic-linear-design/chapter1.pdf (in case you /really/ want to know it all...) 
+ 
+Among them:
+- Interfacing with high impedance "low current" sources. (A lot of biosignals fall in that category)
+	- Often a simple "non inverting Amplifier"  with moderate gain will do.
+- Increasing the voltage of a signal
+	- A lot of different OpAmps will do, check out "non-inverting Amplifier" and "inverting Amplifier"
+- Converting extremely small currents into usable voltages
+	Https://En.Wikipedia.Org/Wiki/Transimpedance_Amplifier
+	https://e2e.ti.com/blogs_/archives/b/precisionhub/posts/transimpedance-amplifiers-what-op-amp-bandwidth-do-i-need-part-i
+	- there are specialized "utlra low input current" amplifiers such as the "lmc6001" for //extremely// low input currents (most general purpose opamps will suffice for everything else)
+- Interfacing with high impedance "differential" inputs
+	- AD620 is a convenient, low noise, but relatively expensive solution for that
+
+- Opamp Inputs are sensitive to Over/Undervoltages! Use clamping circuitry and current limiting resistors!
+
+- A lot of Opamps cannot output voltages close to GND, or their Supply voltage. you will need either a Opamp that can ("rail to rail"), a scheme for biasing the inputs to some known reference Voltage somewhere in the middle, or a separate power supply for the opamps that has a larger range than your desired output signal swing.
+- Selecting "the right" opamp is an endeavor on its own. the parameter based searches on mouser/digikey will help if you know whar you are looking for. Prices are generally unrelated to performance in all but the most "high end" applications. Make sure the amp you order comes in a package that you are able to solder!
+
+
+Have Fun!
+
+
 
